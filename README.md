@@ -11,3 +11,26 @@ A Java 1.8 or later compatible virtual machine for your operating system.
 
 # Licence
 The ChangeLicenceTag Library uses a BSD license for the source code.
+
+# Usage
+## Parsing a SimpleMind file
+To parse a SimpleMind xml file:
+```java
+  SimpleMindParser parser = new SimpleMindParser();
+  SimpleMindDiagram diagram = parser.parse(file);
+```
+
+To parse a SimpleMind smmx file (this is a zip file containing the xml file):
+```java
+  InputStream stream = ReaderUtilities.getSimpleMindStream(file);
+  SimpleMindParser parser = new SimpleMindParser();
+  SimpleMindDiagram diagram = parser.parse(stream);
+```
+
+## Getting the Topics:
+```java
+  SimpleMindDiagram diagram = parser.parse(file);
+
+  Map<Integer, Topic> topics = diagram.getTopics();
+```  
+
