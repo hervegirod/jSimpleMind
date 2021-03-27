@@ -42,7 +42,7 @@
    <!-- =================================================================== -->
 
    <target description="fetch version" depends="-init-project" name="version">
-      <loadproperties srcFile="${src.core.dir}/org/girod/jsimplemind/resources/jsimplemind.properties">
+      <loadproperties srcFile="${src.dir}/org/girod/jsimplemind/resources/jsimplemind.properties">
          <filterchain>
             <linecontains>
                <contains value="version"/>
@@ -67,15 +67,11 @@
 
    <target depends="version, -post-init, zipjavadoc" description="create zip files" name="zip">
       <!-- zip binary files -->
-      <zip compress="true" defaultexcludes="true"
-           zipfile="${dist.dir}/${archiveName}-bin-${version}.zip">
+      <zip compress="true" defaultexcludes="true" zipfile="${dist.dir}/${archiveName}-bin-${version}.zip">
          <fileset description="docs" dir=".">
             <include name="LICENSE"/>
             <include name="CHANGES.txt"/>
-         </fileset>
-         <fileset description="lib" dir="lib">
-            <include name="*.jar"/>
-         </fileset>        
+         </fileset>    
          <fileset description="binaries" dir="${dist.dir}">
             <include name="JSimpleMind.jar"/>
          </fileset>
