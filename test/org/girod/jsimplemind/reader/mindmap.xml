@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE simplemind-mindmaps>
+<simplemind-mindmaps generator="SimpleMindWin32" gen-version="1.28.3" doc-version="3">
+<mindmap>
+<meta>
+<guid guid="BBA084A03B6640129532ABD9BAB7D369"/>
+<title text="The Diagram" customized="True"/>
+<style key="system.aqua-levels"/>
+<auto-numbering style="disabled"/>
+<scrollstate zoom="70" x="-280" y="390"/>
+<selection guid="1AiOO96huUKtq2WC5Sx0Og" type="node" id="4"/>
+<main-centraltheme id="0"/>
+</meta>
+<topics>
+<topic id="0" parent="-1" guid="m8OvnN9Q2U2p38ynls3Yjw" x="324.00" y="785.00" layout="top-down" palette="0" colorinfo="-1" text="Entity" textfmt="plain">
+<layout mode="top-down" direction="bottom" flow="ltr"/>
+<style>
+<textcolor r="0" g="0" b="0"/>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+</style>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+<note>
+The Entity
+</note>
+</topic>
+<topic id="1" parent="0" guid="wZ3e2M5b6U-t84q0pn8s6A" x="119.28" y="891.31" palette="0" colorinfo="-1" text="Continuant" textfmt="plain">
+<style>
+<textcolor r="0" g="0" b="0"/>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+</style>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+</topic>
+<topic id="2" parent="1" guid="z5U5Z8HfF0K5ngPGBn80uQ" x="213.07" y="937.99" palette="0" colorinfo="-1" text="generically dependent continuant" textfmt="plain">
+<style>
+<textcolor r="0" g="0" b="0"/>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+</style>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+<note>
+Generically dependent continuant
+</note>
+</topic>
+<topic id="3" parent="2" guid="NkllWrgFEUu9CjjSyh6-2w" x="217.57" y="982.55" palette="0" colorinfo="-1" text="information content entity" textfmt="plain">
+<style>
+<textcolor r="0" g="0" b="0"/>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+</style>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+</topic>
+<topic id="4" parent="1" guid="1AiOO96huUKtq2WC5Sx0Og" x="181.57" y="1027.11" palette="0" colorinfo="-1" text="independent continuant" textfmt="plain">
+<style>
+<textcolor r="0" g="0" b="0"/>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+</style>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+<note>
+independent continuant
+</note>
+</topic>
+<topic id="5" parent="4" guid="s_CKIXjR-0eMU3mqqLx5wA" x="190.07" y="1071.67" palette="0" colorinfo="-1" text="immaterial entity" textfmt="plain">
+<style>
+<textcolor r="0" g="0" b="0"/>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+</style>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+</topic>
+<topic id="6" parent="5" guid="5y_BLduuckyiYl9bKOr6Hg" x="243.57" y="1116.23" palette="0" colorinfo="-1" text="continuant fiat boundary" textfmt="plain">
+<style>
+<textcolor r="0" g="0" b="0"/>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+</style>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+</topic>
+<topic id="7" parent="6" guid="ZrNRm6mnYEObUJr7XpCm0Q" x="273.57" y="1168.79" palette="0" colorinfo="-1" text="one-dimensional\Ncontinuant fiat boundary" textfmt="plain">
+<style>
+<textcolor r="0" g="0" b="0"/>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+</style>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+</topic>
+<topic id="8" parent="0" guid="RMv88-knhEecjAFb1sdYfQ" x="440.63" y="891.31" palette="0" colorinfo="-1" text="Occurrent" textfmt="plain">
+<style>
+<textcolor r="0" g="0" b="0"/>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+</style>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+<note>
+The Occurrent
+</note>
+</topic>
+<topic id="9" parent="8" guid="qe2bd9nBMkCdeyvTaTkavQ" x="487.93" y="937.99" palette="0" colorinfo="-1" text="process boundary" textfmt="plain">
+<style>
+<textcolor r="0" g="0" b="0"/>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+</style>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+</topic>
+<topic id="10" parent="8" guid="ZSbeP9lFj0KVQSF_zmQNCA" x="501.93" y="982.55" palette="0" colorinfo="-1" text="spatiotemporal region" textfmt="plain">
+<style>
+<textcolor r="0" g="0" b="0"/>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+</style>
+<fillcolor r="228" g="183" b="255"/>
+<strokecolor r="90" g="34" b="162"/>
+</topic>
+</topics>
+<relations/>
+</mindmap>
+</simplemind-mindmaps>
