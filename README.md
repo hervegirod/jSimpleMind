@@ -10,7 +10,7 @@ this project.
 A Java 1.8 or later compatible virtual machine for your operating system.
 
 # Licence
-The ChangeLicenceTag Library uses a BSD license for the source code.
+The jSimpleMind Library uses a BSD license for the source code.
 
 # Usage
 ## Parsing a SimpleMind file
