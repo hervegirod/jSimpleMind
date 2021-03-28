@@ -36,6 +36,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import java.awt.Color;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Map;
@@ -94,14 +95,53 @@ public class SimpleMindDiagramTest {
       assertNotNull("Diagram", diagram);
       Map<Integer, Topic> topics = diagram.getTopics();
       assertEquals("Topics", 11, topics.size());
+   }
+
+   /**
+    * Test of Topics. Test of Topic text and note.
+    */
+   @Test
+   public void testDiagramTopicsTextNote() {
+      System.out.println("SimpleMindDiagramTest : testDiagramTopicsTextNote");
+      assertNotNull("Diagram", diagram);
+      Map<Integer, Topic> topics = diagram.getTopics();
 
       Topic topic = topics.get(10);
       assertNotNull("Topic 10", topic);
       assertEquals("Topic 10", 10, topic.getID());
       assertEquals("Topic 10", "spatiotemporal region", topic.getText());
       assertEquals("Topic 10", "", topic.getNote());
+   }
 
-      topic = topics.get(8);
+   /**
+    * Test of Topics. Test of Topic Colors.
+    */
+   @Test
+   public void testDiagramTopicsColors() {
+      System.out.println("SimpleMindDiagramTest : testDiagramTopicsColors");
+      assertNotNull("Diagram", diagram);
+      Map<Integer, Topic> topics = diagram.getTopics();
+
+      Topic topic = topics.get(7);
+      assertNotNull("Topic 7", topic);
+      Color color = topic.getFillColor();
+      assertEquals("Fill color", new Color(228, 183, 255), color);
+      color = topic.getStrokeColor();
+      assertEquals("Stroke color", new Color(90, 34, 162), color);
+      color = topic.getTextColor();
+      assertEquals("Text color", new Color(0, 0, 0), color);
+   }
+
+   /**
+    * Test of Topics. Test of Topic parent.
+    */
+   @Test
+   public void testDiagramTopicsParent() {
+      System.out.println("SimpleMindDiagramTest : testDiagramTopicsParent");
+      assertNotNull("Diagram", diagram);
+      Map<Integer, Topic> topics = diagram.getTopics();
+
+      Topic topic = topics.get(8);
       assertNotNull("Topic 8", topic);
       assertEquals("Topic 8", 8, topic.getID());
       assertEquals("Topic 8", "Occurrent", topic.getText());
