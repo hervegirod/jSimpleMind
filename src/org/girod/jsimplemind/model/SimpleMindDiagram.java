@@ -36,12 +36,18 @@ import java.util.Map;
 /**
  * Represents a SimpleMind diagram.
  *
- * @since 0.1
+ * @version 0.2
  */
 public class SimpleMindDiagram {
    private String title = null;
-   public Map<Integer, Topic> topics = new HashMap<>();
-   public Map<String, Map<Integer, Topic>> topicsByName = new HashMap<>();
+   /**
+    * The topics.
+    */
+   protected Map<Integer, Topic> topics = new HashMap<>();
+   /**
+    * The topics sorted by their text value.
+    */
+   protected Map<String, Map<Integer, Topic>> topicsByName = new HashMap<>();
 
    public SimpleMindDiagram() {
    }

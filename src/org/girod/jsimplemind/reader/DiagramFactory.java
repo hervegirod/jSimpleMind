@@ -34,22 +34,26 @@ import org.girod.jsimplemind.model.SimpleMindDiagram;
 import org.girod.jsimplemind.model.Topic;
 
 /**
- * This interface can be provided to the {@link SimpleMindParser} to parse the content of Topic notes.
+ * A DiagramFactory allows to create diagrams. Contrary to the default diagram, they can have additional properties.
  *
- * @version 0.2
+ * @since 0.2
  */
-public interface NoteParser {
+public interface DiagramFactory {
    /**
-    * Reset the parser state.
+    * Create a new diagram.
     *
-    * @param diagram the diagram
+    * @return the diagram
     */
-   public void resetState(SimpleMindDiagram diagram);
+   public SimpleMindDiagram createDiagram();
+
    /**
-    * Parse a Topic note. The NoteParser will be able to add properties for the Topic depending on the content of the note.
+    * Create a new Topic. By default the method will return null. If that case, a default {@link org.girod.jsimplemind.model.Topic}
+    * will be created by the parser.
     *
-    * @param topic the Topic
-    * @param content the note content
+    * @param id the Topic id
+    * @return the Topic
     */
-   public void parseNote(Topic topic, String content);
+   public default Topic createTopic(int id) {
+      return null;
+   }
 }

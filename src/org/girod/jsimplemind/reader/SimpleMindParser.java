@@ -52,13 +52,32 @@ import org.xml.sax.SAXException;
 /**
  * The parser class.
  *
- * @since 0.1
+ * @version 0.2
  */
 public class SimpleMindParser {
    private SimpleMindDiagram diagram = null;
    private NoteParser noteParser = null;
+   private DiagramFactory factory = null;
 
    public SimpleMindParser() {
+   }
+
+   /**
+    * Set the associated Diagram factory.
+    *
+    * @param factory the factory
+    */
+   public void setDiagramFactory(DiagramFactory factory) {
+      this.factory = factory;
+   }
+
+   /**
+    * Return the associated Diagram factory.
+    *
+    * @return the factory
+    */
+   public DiagramFactory getDiagramFactory() {
+      return factory;
    }
 
    /**
@@ -129,21 +148,48 @@ public class SimpleMindParser {
       }
    }
 
-   private SimpleMindDiagram walk(XMLRoot root) {
-      if (noteParser != null) {
-         noteParser.resetState();
+   private Topic createTopic(int id) {
+      Topic topic;
+      if (factory != null) {
+         topic = factory.createTopic(id);
+         if (topic == null) {
+            topic = new Topic(id);
+         }
+      } else {
+         topic = new Topic(id);
       }
+      return topic;
+   }
+
+   private void createDiagram() {
+      if (factory != null) {
+         diagram = factory.createDiagram();
+      } else {
+         diagram = new SimpleMindDiagram();
+      }
+   }
+
+   private SimpleMindDiagram walk(XMLRoot root) {
       List<Topic> topics = new ArrayList<>();
-      this.diagram = new SimpleMindDiagram();
+      createDiagram();
+      if (noteParser != null) {
+         noteParser.resetState(diagram);
+      }
       Map<Integer, Integer> parents = new HashMap<>();
       XMLTreeWalker walker = new XMLTreeWalker(root);
       Topic topic = null;
+      boolean hasTextColor = false;
+      boolean hasStrokeColor = false;
+      boolean hasFillColor = false;
       while (walker.hasNext()) {
          XMLNode node = walker.nextNode();
          String name = node.getName();
          if (name.equals("topic")) {
             int id = node.getAttributeValueAsInt("id");
-            topic = new Topic(id);
+            topic = createTopic(id);
+            hasTextColor = false;
+            hasStrokeColor = false;
+            hasFillColor = false;
             int parentid = node.getAttributeValueAsInt("parent", -1);
             if (parentid != -1) {
                parents.put(id, parentid);
@@ -158,12 +204,27 @@ public class SimpleMindParser {
                topic.setPosition(x, y);
             }
             topics.add(topic);
-         } else if (name.equals("fillcolor") && topic != null) {
+         } else if (name.equals("fillcolor") && topic != null && !hasFillColor) {
+            hasFillColor = true;
             int red = node.getAttributeValueAsInt("r", 0);
             int green = node.getAttributeValueAsInt("g", 0);
             int blue = node.getAttributeValueAsInt("b", 0);
             Color color = new Color(red, green, blue);
-            topic.setBackground(color);
+            topic.setFillColor(color);
+         } else if (name.equals("textcolor") && topic != null && !hasTextColor) {
+            hasTextColor = true;
+            int red = node.getAttributeValueAsInt("r", 0);
+            int green = node.getAttributeValueAsInt("g", 0);
+            int blue = node.getAttributeValueAsInt("b", 0);
+            Color color = new Color(red, green, blue);
+            topic.setTextColor(color);
+         } else if (name.equals("strokecolor") && topic != null && !hasStrokeColor) {
+            hasStrokeColor = true;
+            int red = node.getAttributeValueAsInt("r", 0);
+            int green = node.getAttributeValueAsInt("g", 0);
+            int blue = node.getAttributeValueAsInt("b", 0);
+            Color color = new Color(red, green, blue);
+            topic.setStrokeColor(color);
          } else if (name.equals("note") && topic != null) {
             String cdata = node.getCDATA();
             if (cdata != null) {

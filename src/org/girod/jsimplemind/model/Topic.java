@@ -40,14 +40,16 @@ import java.util.Objects;
 /**
  * Represents a Topic.
  *
- * @since 0.1
+ * @version 0.2
  */
 public class Topic {
    private int id;
    private String text = "";
    private String note = "";
    private Topic parent = null;
-   private Color background = null;
+   private Color fillColor = Color.WHITE;
+   private Color textColor = Color.BLACK;
+   private Color strokeColor = Color.BLACK;
    private int x = 0;
    private int y = 0;
    private Map<String, Object> properties = new HashMap<>();
@@ -91,7 +93,7 @@ public class Topic {
       if (!Objects.equals(this.note, other.note)) {
          return false;
       }
-      if (!Objects.equals(this.background, other.background)) {
+      if (!Objects.equals(this.fillColor, other.fillColor)) {
          return false;
       }
       return true;
@@ -154,21 +156,57 @@ public class Topic {
    }
 
    /**
-    * Set the Topic background
+    * Set the Topic fill color
     *
-    * @param background the background
+    * @param fillColor the fill color
     */
-   public void setBackground(Color background) {
-      this.background = background;
+   public void setFillColor(Color fillColor) {
+      this.fillColor = fillColor;
    }
 
    /**
-    * Return the Topic background
+    * Return the Topic fill color
     *
-    * @return the background
+    * @return the fill color
     */
-   public Color getBackground() {
-      return background;
+   public Color getFillColor() {
+      return fillColor;
+   }
+
+   /**
+    * Set the Topic text color
+    *
+    * @param textColor the text color
+    */
+   public void setTextColor(Color textColor) {
+      this.textColor = textColor;
+   }
+
+   /**
+    * Return the Topic text color
+    *
+    * @return the text color
+    */
+   public Color getTextColor() {
+      return textColor;
+   }
+
+   /**
+    * Set the Topic stroke color
+    *
+    * @param strokeColor the stroke color
+    */
+   public void setStrokeColor(Color strokeColor) {
+      this.strokeColor = strokeColor;
+   }
+
+   /**
+    * Return the Topic stroke color
+    *
+    * @return the stroke color
+    */
+   public Color getStrokeColor() {
+      return strokeColor;
    }
 
    /**
@@ -180,6 +218,26 @@ public class Topic {
     */
    public void addProperty(String key, Object property) {
       properties.put(key, property);
+   }
+
+   /**
+    * Return true if there is a property for a specified key.
+    *
+    * @param key the key
+    * @return true if there is a property for the specified key
+    */
+   public boolean hasProperty(String key) {
+      return properties.containsKey(key);
+   }
+
+   /**
+    * Return the property for a specified key.
+    *
+    * @param key the key
+    * @return the property for the specified key
+    */
+   public Object getProperty(String key) {
+      return properties.get(key);
    }
 
    /**
