@@ -56,7 +56,7 @@ To install a `NoteParser` on the parser, just do:
 The Topic class support the concept of properties which allows the `NoteParser` to add specific properties depending on 
 the parsing of the note content.
 
-## creating custom diagrams
+## Creating custom diagrams
 The `DiagramFactory` class allows to create custom diagrams or Topics. 
 
 To install a `DiagramFactory` on the parser, just do:
