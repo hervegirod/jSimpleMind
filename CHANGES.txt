@@ -1,2 +1,7 @@
 == Version 0.1 ==
  - Creation of the library
+
+== Version 0.2 ==
+ - Handle the Topics text and stroke color
+ - Add the capability to create diagrams with special properties
+ - Add the capability to create custom Topics
