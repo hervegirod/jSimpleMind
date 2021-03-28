@@ -13,10 +13,10 @@ A Java 1.8 or later compatible virtual machine for your operating system.
 The jSimpleMind Library uses a BSD license for the source code.
 
 # History
-## Version 0.1 ==
+## Version 0.1
  - Creation of the library
 
-## Version 0.2 ==
+## Version 0.2
  - Handle the Topics text and stroke color
  - Add the capability to create diagrams with special properties
  - Add the capability to create custom Topics
