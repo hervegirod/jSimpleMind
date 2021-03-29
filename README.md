@@ -21,6 +21,10 @@ The jSimpleMind Library uses a BSD license for the source code.
  - Add the capability to create diagrams with special properties
  - Add the capability to create custom Topics
 
+## Version 0.3
+ - Add a getRoot() method for the Topic to get the root of the Topic
+ - Add a resolve() method for the NoteParser at the end of the parsing
+
 # Usage
 ## Parsing a SimpleMind file
 To parse a SimpleMind xml file:
