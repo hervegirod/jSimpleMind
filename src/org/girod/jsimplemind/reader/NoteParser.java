@@ -36,7 +36,7 @@ import org.girod.jsimplemind.model.Topic;
 /**
  * This interface can be provided to the {@link SimpleMindParser} to parse the content of Topic notes.
  *
- * @version 0.2
+ * @version 0.3
  */
 public interface NoteParser {
    /**
@@ -52,4 +52,10 @@ public interface NoteParser {
     * @param content the note content
     */
    public void parseNote(Topic topic, String content);
+   
+   /**
+    * Resolve at the end of the parsing. No nothing by default.
+    */
+   public default void resolve() {      
+   }
 }

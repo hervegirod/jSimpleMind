@@ -52,7 +52,7 @@ import org.xml.sax.SAXException;
 /**
  * The parser class.
  *
- * @version 0.2
+ * @version 0.3
  */
 public class SimpleMindParser {
    private SimpleMindDiagram diagram = null;
@@ -117,9 +117,9 @@ public class SimpleMindParser {
     * @return the diagram
     */
    public SimpleMindDiagram parse(InputStream stream) throws IOException, SAXException {
-      SAXParserFactory factory = SAXParserFactory.newInstance();
+      SAXParserFactory saxfactory = SAXParserFactory.newInstance();
       try {
-         SAXParser parser = factory.newSAXParser();
+         SAXParser parser = saxfactory.newSAXParser();
          XMLTreeHandler handler = new XMLTreeHandler();
          parser.parse(stream, handler);
          return walk(handler.getRoot());
@@ -136,9 +136,9 @@ public class SimpleMindParser {
     * @return the diagram
     */
    public SimpleMindDiagram parse(URL url) throws IOException, SAXException {
-      SAXParserFactory factory = SAXParserFactory.newInstance();
+      SAXParserFactory saxfactory = SAXParserFactory.newInstance();
       try {
-         SAXParser parser = factory.newSAXParser();
+         SAXParser parser = saxfactory.newSAXParser();
          XMLTreeHandler handler = new XMLTreeHandler();
          parser.parse(url.openStream(), handler);
          return walk(handler.getRoot());
@@ -253,6 +253,9 @@ public class SimpleMindParser {
             }
          }
       }
+      if (noteParser != null) {
+         noteParser.resolve();
+      }      
       return diagram;
    }
 }

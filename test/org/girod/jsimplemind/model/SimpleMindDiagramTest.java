@@ -45,7 +45,7 @@ import org.xml.sax.SAXException;
 
 /**
  *
- * @since 0.1
+ * @version 0.3
  */
 public class SimpleMindDiagramTest {
    private static SimpleMindDiagram diagram = null;
@@ -150,9 +150,18 @@ public class SimpleMindDiagramTest {
       assertNotNull("Topic 8 parent", parent);
       assertEquals("Topic 8 parent", 0, parent.getID());
       assertTrue("Topic 8 parent", topic.hasParent());
+      
+      Topic root = topic.getRoot();
+      assertNotNull("Topic 8 root", root);
+      assertEquals("Topic 8 root", 0, root.getID());      
+      
 
       topic = topics.get(0);
       assertFalse("Topic 0 parent", topic.hasParent());
+      
+      root = topic.getRoot();
+      assertNotNull("Topic 0 root", root);    
+      assertEquals("Topic 0 root", 0, root.getID());
    }
 
    /**

@@ -40,10 +40,10 @@ import java.util.Objects;
 /**
  * Represents a Topic.
  *
- * @version 0.2
+ * @version 0.3
  */
 public class Topic {
-   private int id;
+   private final int id;
    private String text = "";
    private String note = "";
    private Topic parent = null;
@@ -52,12 +52,30 @@ public class Topic {
    private Color strokeColor = Color.BLACK;
    private int x = 0;
    private int y = 0;
-   private Map<String, Object> properties = new HashMap<>();
-   private List<Topic> childrenList = new ArrayList<>();
-   private Map<Integer, Topic> children = new HashMap<>();
+   private final Map<String, Object> properties = new HashMap<>();
+   private final List<Topic> childrenList = new ArrayList<>();
+   private final Map<Integer, Topic> children = new HashMap<>();
 
    public Topic(int id) {
       this.id = id;
+   }
+
+   /**
+    * Return the Topic root. Note that if the Topic has no parent, the root is the Topic itself.
+    *
+    * @return the root
+    */
+   public Topic getRoot() {
+      Topic root = this;
+      while (root != null) {
+         Topic _parent = root.getParent();
+         if (_parent != null) {
+            root = _parent;
+         } else {
+            break;
+         }
+      }
+      return root;
    }
 
    @Override
